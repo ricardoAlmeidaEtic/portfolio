@@ -4,38 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.e6c13ad2.css' %}">
   <link rel="icon" href="https://eticalgarve.com/wp-content/uploads/2020/05/cropped-fave-192x192.png" sizes="192x192" />
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <div class="app-container">
-        <!--
-        <div id="drawerAppBar" ></div>
-
-        <script id="type-data" type="application/json">
-            {{ grouped_connection_types|json_script:"type-data" }}
-        </script>
-
-        {% if request.path == '/login/' %}
-          {% block 'login' %}
-          {% endblock %}
-        {% elif request.path == '/signup/' %}
-          {% block 'signup' %}
-          {% endblock %}
-        {% elif not user.is_authenticated %}
-          <div id="registerLogin"></div>
-        {% else %}
-          {% block 'content' %}
-          {% endblock %}
-        {% endif %}
-
-        <footer id="footer">
-          
-        </footer>
-        -->
+      {% block 'content' %}{% endblock %}
     </div>
 
-    <script src="{% static 'js/main.ffcbe8a4.js' %}"></script>
+    <script src="{% static 'js/main.064a3ec8.js' %}"></script>
 </body>
 </html>

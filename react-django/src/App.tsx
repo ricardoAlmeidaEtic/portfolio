@@ -3,11 +3,25 @@ import AboutComponent from './components/AboutComponent';
 import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import ProjectsComponent from './components/ProjectsComponent';
+import HomeBannerComponent from './components/HomeBannerComponent';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => {
   return (
     <div>
-      <HeaderComponent />
+      <HeaderComponent isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+    </div>
+  );
+};
+
+export const HomeBanner: React.FC = () => {
+  return (
+    <div>
+      <HomeBannerComponent />
     </div>
   );
 };

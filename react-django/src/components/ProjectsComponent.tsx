@@ -1,19 +1,23 @@
 import React from 'react';
-import { Card, CardContent, Typography, List, ListItem } from '@mui/material';
+import { Typography, List, ListItem } from '@mui/material';
 
 const Projects: React.FC = () => (
-  <Card variant="outlined" sx={{ marginTop: 2 }}>
-    <CardContent>
-      <Typography variant="h5" component="div" gutterBottom>
-        Projects
-      </Typography>
-      <List>
-        <ListItem>Project One - A cool web app</ListItem>
-        <ListItem>Project Two - Another amazing project</ListItem>
-        <ListItem>Project Three - Yet another awesome app</ListItem>
-      </List>
-    </CardContent>
-  </Card>
+  <>
+    <Typography variant="h4" component="div" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', mt: 4 }}>
+      Projects
+    </Typography>
+    <List sx={{ display: 'inline-block', textAlign: 'left', marginLeft: 'auto', marginRight: 'auto' }}>
+      <ListItem>
+        <Typography variant="body1">🚀 Project One - A cool web app</Typography>
+      </ListItem>
+      <ListItem>
+        <Typography variant="body1">🌟 Project Two - Another amazing project</Typography>
+      </ListItem>
+      <ListItem>
+        <Typography variant="body1">💻 Project Three - Yet another awesome app</Typography>
+      </ListItem>
+    </List>
+  </>
 );
 
 export default Projects;

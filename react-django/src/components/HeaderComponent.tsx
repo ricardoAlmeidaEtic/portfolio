@@ -1,12 +1,28 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
-const Header: React.FC = () => (
+interface HeaderProps {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleTheme }) => (
   <AppBar position="static">
-    <Toolbar>
+    <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <Typography variant="h6" component="div">
         My Portfolio
       </Typography>
+      <Button
+        onClick={toggleTheme}
+        variant="outlined"
+        sx={{
+          color: 'inherit',
+          borderColor: 'inherit',
+          '&:hover': { borderColor: 'primary.light' },
+        }}
+      >
+        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      </Button>
     </Toolbar>
   </AppBar>
 );

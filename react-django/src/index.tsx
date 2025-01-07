@@ -1,12 +1,29 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './pages/Home';
 import './index.css';
-import { CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { lightTheme, darkTheme } from './theme';
+import React, { useState } from 'react';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <CssBaseline />
-    <Home />
-  </React.StrictMode>
-);
+const homepageElement = document.getElementById('homepage') as HTMLElement | null;
+
+if (homepageElement) {
+  const root = ReactDOM.createRoot(homepageElement);
+
+  const RootApp = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleTheme = () => {
+      setIsDarkMode(!isDarkMode);
+    };
+
+    return (
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <CssBaseline />
+        <Home isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      </ThemeProvider>
+    );
+  };
+
+  root.render(<RootApp />);
+}
